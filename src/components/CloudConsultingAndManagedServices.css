@@ -1,0 +1,805 @@
+/* ==========================================================================
+   CLOUD CONSULTING & MANAGED SERVICES - COMPLETE STYLES
+   ========================================================================== */
+
+.consulting-page {
+  background: #ffffff;
+  color: #0b132a;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ================= HERO ================= */
+.consulting-hero {
+  position: relative;
+  padding: 85px 7% 105px;
+  background: radial-gradient(circle at 80% 25%, rgba(224, 231, 255, 0.7), transparent 50%),
+              radial-gradient(circle at 20% 75%, rgba(224, 242, 254, 0.6), transparent 50%),
+              #ffffff;
+  border-bottom: 1px solid #eef2f6;
+  overflow: hidden;
+}
+
+.consulting-hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 60px;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.consulting-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  border-radius: 999px;
+  color: #6d28d9;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.consulting-eyebrow {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 14px;
+}
+
+.consulting-hero-content h1 {
+  font-size: clamp(38px, 4.2vw, 56px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  color: #0b132a;
+  margin-bottom: 22px;
+}
+
+.consulting-hero-content h1 span {
+  background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.consulting-lead {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: #334155;
+  margin-bottom: 14px;
+  max-width: 640px;
+  font-weight: 500;
+}
+
+.consulting-sublead {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #64748b;
+  margin-bottom: 32px;
+  max-width: 620px;
+}
+
+.consulting-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 38px;
+}
+
+.consulting-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14.5px;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px -8px rgba(124, 58, 237, 0.45);
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.consulting-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -8px rgba(124, 58, 237, 0.6);
+}
+
+.consulting-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 22px;
+  background: #ffffff;
+  color: #1e293b;
+  font-weight: 700;
+  font-size: 14.5px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.consulting-btn-secondary:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.consulting-supported-clouds {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.consulting-supported-clouds > span {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #94a3b8;
+}
+
+.cloud-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cloud-chips strong {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  background: #f8fafc;
+  border-radius: 6px;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+}
+
+/* Visual Topology Card */
+.consulting-hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topology-card {
+  width: 100%;
+  max-width: 470px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 25px 60px -20px rgba(15, 23, 42, 0.15);
+  position: relative;
+  z-index: 5;
+}
+
+.topology-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 22px;
+}
+
+.status-live {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+}
+
+.topology-header strong {
+  font-size: 13.5px;
+  color: #0f172a;
+}
+
+.topology-header small {
+  margin-left: auto;
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.cloud-mesh-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.mesh-node {
+  flex: 1;
+  padding: 14px 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.mesh-node strong {
+  display: block;
+  font-size: 13px;
+  color: #0f172a;
+  margin-top: 4px;
+}
+
+.mesh-node small {
+  font-size: 10.5px;
+  color: #64748b;
+}
+
+.mesh-connector {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #7c3aed;
+  text-align: center;
+  padding: 4px 6px;
+  background: #f5f3ff;
+  border-radius: 6px;
+  border: 1px dashed #c4b5fd;
+}
+
+.mesh-center-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #faf5ff 0%, #eff6ff 100%);
+  border: 1px solid #ddd6fe;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.center-icon {
+  font-size: 24px;
+}
+
+.mesh-center-box strong {
+  display: block;
+  font-size: 13px;
+  color: #1e1b4b;
+}
+
+.mesh-center-box small {
+  font-size: 11px;
+  color: #6366f1;
+}
+
+.topology-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  text-align: center;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 16px;
+}
+
+.topology-metrics small {
+  display: block;
+  font-size: 10.5px;
+  color: #64748b;
+  margin-bottom: 3px;
+}
+
+.topology-metrics strong {
+  font-size: 14.5px;
+  color: #7c3aed;
+  font-weight: 800;
+}
+
+.floating-metric-badge {
+  position: absolute;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 14px 30px -8px rgba(15, 23, 42, 0.12);
+}
+
+.floating-metric-badge span {
+  font-size: 22px;
+}
+
+.floating-metric-badge strong {
+  display: block;
+  font-size: 12.5px;
+  color: #0f172a;
+}
+
+.floating-metric-badge small {
+  font-size: 11px;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.badge-top {
+  top: -20px;
+  right: -20px;
+}
+
+.badge-bottom {
+  bottom: -25px;
+  left: -20px;
+}
+
+/* ================= SECTION HEADINGS ================= */
+.consulting-section-heading {
+  max-width: 760px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.consulting-section-heading > p:first-child {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #7c3aed;
+  margin-bottom: 12px;
+}
+
+.consulting-section-heading h2 {
+  font-size: clamp(32px, 3.5vw, 46px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: #0b132a;
+  margin-bottom: 16px;
+}
+
+.consulting-section-heading h2 span {
+  background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.consulting-section-heading > p:last-child {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #475569;
+}
+
+/* ================= 4 PILLARS SECTION ================= */
+.consulting-pillars-section {
+  padding: 90px 7%;
+  background: #fbfbfe;
+  border-bottom: 1px solid #eef2f6;
+}
+
+.consulting-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.consulting-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.consulting-tab-btn:hover {
+  border-color: #7c3aed;
+  color: #7c3aed;
+}
+
+.consulting-tab-btn.active {
+  background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 8px 20px -6px rgba(124, 58, 237, 0.4);
+}
+
+.consulting-active-card {
+  max-width: 1100px;
+  margin: 0 auto 60px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 36px 32px;
+  box-shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.08);
+}
+
+.card-top-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 28px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.icon-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.pillar-badge-pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #7c3aed;
+  background: #f5f3ff;
+  padding: 3px 10px;
+  border-radius: 99px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.card-top-row h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0b132a;
+  margin-bottom: 6px;
+}
+
+.card-overview {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.card-deepdive-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.deepdive-box {
+  padding: 24px 20px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.deepdive-box.highlight {
+  background: #f5f3ff;
+  border-color: #ddd6fe;
+}
+
+.deepdive-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #7c3aed;
+  margin-bottom: 8px;
+}
+
+.deepdive-box p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #334155;
+}
+
+.card-tech-stack {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-top: 18px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.card-tech-stack > span {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.tech-chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-chip {
+  font-size: 12px;
+  font-weight: 700;
+  color: #7c3aed;
+  background: #f5f3ff;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* 4 Pillar Cards Grid */
+.pillars-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.consulting-pillar-card {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 20px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.consulting-pillar-card:hover,
+.consulting-pillar-card.active {
+  transform: translateY(-4px);
+  border-color: #7c3aed;
+  box-shadow: 0 16px 36px -10px rgba(124, 58, 237, 0.2);
+}
+
+.consulting-pillar-card .card-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.mini-tag {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #7c3aed;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.consulting-pillar-card h4 {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: #0b132a;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.consulting-pillar-card p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #64748b;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.card-arrow-link {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #7c3aed;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ================= FEATURES ================= */
+.consulting-features-section {
+  padding: 90px 7%;
+  background: #ffffff;
+}
+
+.consulting-features-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.consulting-feature-card {
+  padding: 25px 20px;
+  background: #fbfbfe;
+  border: 1px solid #eef2f6;
+  border-radius: 14px;
+  transition: all 0.25s ease;
+}
+
+.consulting-feature-card:hover {
+  transform: translateY(-4px);
+  background: #ffffff;
+  border-color: #ddd6fe;
+  box-shadow: 0 14px 30px -10px rgba(124, 58, 237, 0.15);
+}
+
+.consulting-feature-card .feature-icon {
+  font-size: 26px;
+  margin-bottom: 14px;
+}
+
+.consulting-feature-card h4 {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #0b132a;
+  margin-bottom: 8px;
+}
+
+.consulting-feature-card p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #64748b;
+}
+
+/* ================= TESTIMONIALS ================= */
+.consulting-testimonials-section {
+  padding: 90px 7%;
+  background: #f8fafc;
+  border-top: 1px solid #eef2f6;
+}
+
+.consulting-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.consulting-testimonial-card {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 20px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px -10px rgba(15, 23, 42, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.consulting-testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -12px rgba(124, 58, 237, 0.15);
+}
+
+.consulting-testimonial-card .stars {
+  margin-bottom: 12px;
+  color: #f59e0b;
+  letter-spacing: 2px;
+}
+
+.consulting-testimonial-card p {
+  flex: 1;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 16px;
+}
+
+.consulting-testimonial-card strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  color: #0b132a;
+}
+
+.consulting-testimonial-card span {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* ================= CTA BANNER ================= */
+.consulting-cta-section {
+  padding: 70px 7% 90px;
+  background: #ffffff;
+}
+
+.consulting-cta-box {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 48px;
+  background: linear-gradient(135deg, #1e1b4b 0%, #1e293b 50%, #0b132a 100%);
+  border-radius: 24px;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 60px -15px rgba(30, 27, 75, 0.4);
+}
+
+.consulting-cta-box .cta-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #a78bfa;
+  margin-bottom: 14px;
+}
+
+.consulting-cta-box h2 {
+  font-size: clamp(30px, 3.5vw, 44px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.consulting-cta-box h2 span {
+  background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.consulting-cta-box p {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #cbd5e1;
+  max-width: 720px;
+  margin: 0 auto 32px;
+}
+
+.cta-main-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 32px;
+  background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.5);
+  transition: all 0.25s ease;
+}
+
+.cta-main-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -5px rgba(124, 58, 237, 0.7);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1100px) {
+  .consulting-hero-container { grid-template-columns: 1fr; gap: 45px; }
+  .card-deepdive-grid { grid-template-columns: 1fr; }
+  .pillars-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .consulting-features-grid { grid-template-columns: repeat(3, 1fr); }
+  .consulting-testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .pillars-cards-grid { grid-template-columns: 1fr; }
+  .consulting-features-grid { grid-template-columns: repeat(2, 1fr); }
+  .consulting-testimonials-grid { grid-template-columns: 1fr; }
+  .consulting-cta-box { padding: 40px 24px; }
+}
+
+@media (max-width: 540px) {
+  .consulting-features-grid { grid-template-columns: 1fr; }
+  .badge-top, .badge-bottom { display: none; }
+}

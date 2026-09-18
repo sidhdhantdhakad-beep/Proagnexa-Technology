@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Logo from './Logo';
 
-export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, onNavigateServices, onNavigateCareer, onNavigateContact, onNavigateMobile, onNavigateDevOps, currentPage = 'home' }) {
+export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, onNavigateServices, onNavigateCareer, onNavigateContact, onNavigateMobile, onNavigateDevOps, onNavigateCloudConsulting, currentPage = 'home' }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
@@ -36,6 +36,13 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
     onNavigateDevOps && onNavigateDevOps();
   };
 
+  const handleCloudConsultingNavigation = (event) => {
+    event?.preventDefault();
+    setServicesDropdownOpen(false);
+    setMobileMenuOpen(false);
+    onNavigateCloudConsulting && onNavigateCloudConsulting();
+  };
+
   return (
     <header className={`navbar-wrapper ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
@@ -56,7 +63,7 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
               {currentPage === 'about' && <span className="active-indicator"></span>}
             </li>
             <li
-              className={`nav-item has-dropdown ${currentPage === 'services' || currentPage === 'mobile' || currentPage === 'devops' ? 'active' : ''}`}
+              className={`nav-item has-dropdown ${currentPage === 'services' || currentPage === 'mobile' || currentPage === 'devops' || currentPage === 'cloud-consulting' ? 'active' : ''}`}
               onMouseEnter={() => setServicesDropdownOpen(true)}
               onMouseLeave={() => setServicesDropdownOpen(false)}
             >
@@ -71,7 +78,7 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
               </button>
-              {(currentPage === 'services' || currentPage === 'mobile' || currentPage === 'devops') && <span className="active-indicator"></span>}
+              {(currentPage === 'services' || currentPage === 'mobile' || currentPage === 'devops' || currentPage === 'cloud-consulting') && <span className="active-indicator"></span>}
 
               {servicesDropdownOpen && (
                 <div className="dropdown-menu">
@@ -82,7 +89,7 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
                       <p>Reliable infrastructure and delivery</p>
                     </div>
                   </a>
-                  <a href="#services" onClick={handleServicesNavigation} className="dropdown-item">
+                  <a href="#cloud-consulting" onClick={handleCloudConsultingNavigation} className="dropdown-item">
                     <span className="drop-icon purple">⚙️</span>
                     <div>
                       <strong>Cloud Consulting &amp; Managed Services</strong>
@@ -157,7 +164,7 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
               <a href="#services" onClick={handleServicesNavigation} className={currentPage === 'services' ? 'mobile-active' : ''}>Services</a>
               <div className="mobile-service-links">
                 <a href="#devops" onClick={handleDevOpsNavigation}>DevOps &amp; Cloud Services</a>
-                <a href="#services" onClick={handleServicesNavigation}>Cloud Consulting &amp; Managed Services</a>
+                <a href="#cloud-consulting" onClick={handleCloudConsultingNavigation}>Cloud Consulting &amp; Managed Services</a>
                 <a href="#mobile" onClick={handleMobileNavigation}>Mobile Application Development</a>
                 <a href="#services" onClick={handleServicesNavigation}>Agency Partnership</a>
                 <a href="#services" onClick={handleServicesNavigation}>White-Label Development</a>

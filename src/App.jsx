@@ -8,6 +8,7 @@ import Careers from './components/Careers';
 import Contact from './components/Contact';
 import MobileApplicationDevelopment from './components/MobileApplicationDevelopment';
 import DevOpsAndCloudServices from './components/DevOpsAndCloudServices';
+import CloudConsultingAndManagedServices from './components/CloudConsultingAndManagedServices';
 import VideoModal from './components/VideoModal';
 import SearchModal from './components/SearchModal';
 import Footer from './components/Footer';
@@ -22,6 +23,8 @@ function App() {
   const currentPage =
     path === '/about'
       ? 'about'
+      : path === '/services/cloud-consulting-and-managed-services' || path === '/cloud-consulting'
+      ? 'cloud-consulting'
       : path === '/services/devops-and-cloud-services' || path === '/devops'
       ? 'devops'
       : path === '/services/mobile-application-development' || path === '/mobile'
@@ -46,6 +49,7 @@ function App() {
   const navigateToContact = () => goTo('/contact');
   const navigateToMobile = () => goTo('/services/mobile-application-development');
   const navigateToDevOps = () => goTo('/services/devops-and-cloud-services');
+  const navigateToCloudConsulting = () => goTo('/services/cloud-consulting-and-managed-services');
 
   return (
     <div className="page-wrapper">
@@ -58,6 +62,7 @@ function App() {
         onNavigateContact={navigateToContact}
         onNavigateMobile={navigateToMobile}
         onNavigateDevOps={navigateToDevOps}
+        onNavigateCloudConsulting={navigateToCloudConsulting}
         onOpenSearch={() => setSearchModalOpen(true)}
       />
 
@@ -68,6 +73,7 @@ function App() {
       {currentPage === 'contact' && <Contact />}
       {currentPage === 'mobile' && <MobileApplicationDevelopment />}
       {currentPage === 'devops' && <DevOpsAndCloudServices />}
+      {currentPage === 'cloud-consulting' && <CloudConsultingAndManagedServices />}
 
       <Footer />
       <VideoModal isOpen={videoModalOpen} onClose={() => setVideoModalOpen(false)} />
