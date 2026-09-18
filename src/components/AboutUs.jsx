@@ -30,24 +30,24 @@ const values = [
 
 const stats = [
   {
-    number: "5+",
+    number: "15+",
     label: "Years of Experience",
-    icon: "♧",
+    icon: "⏳",
   },
   {
-    number: "50+",
+    number: "40+",
     label: "Happy Clients",
-    icon: "♙",
+    icon: "🤝",
   },
   {
-    number: "100+",
+    number: "102+",
     label: "Projects Delivered",
     icon: "🚀",
   },
   {
-    number: "99.9%",
-    label: "Client Satisfaction",
-    icon: "✓",
+    number: "20+",
+    label: "Skilled Experts",
+    icon: "👥",
   },
 ];
 
@@ -172,23 +172,17 @@ function AboutUs({ onNavigateHome, onNavigateServices, onOpenVideo, onOpenSearch
             </div>
 
             <h1>
-              Building Innovative
+              Smart Web, Mobile, and
               <br />
-              Solutions for a
-              <br />
-              <span className="gradient-text">Brighter Future</span>
+              <span className="gradient-text">Automation Solutions</span>
             </h1>
 
             <p>
-              We are a team of passionate developers, designers and
-              problem solvers dedicated to creating technology that
-              makes a real difference.
+              Proagnexa Technology delivers high-performance web, mobile, and automation solutions with 15+ years of expertise. Our workflow automation—spanning robotic, business, and document processes—enhances operational efficiency, compliance, and data security.
             </p>
 
             <p>
-              At Proagnexa Technology, we turn ideas into scalable
-              digital solutions that help businesses grow and succeed
-              in the digital world.
+              We provide dedicated, round-the-clock support and tailored IT consulting to help businesses of all sizes scale seamlessly and succeed in today's competitive digital landscape.
             </p>
 
             <div className="hero-buttons">
@@ -231,9 +225,9 @@ function AboutUs({ onNavigateHome, onNavigateServices, onOpenVideo, onOpenSearch
 
               <div>
                 <strong>
-                  Technology for a
+                  15+ Years of Excellence
                   <br />
-                  better tomorrow
+                  in Smart Automation
                 </strong>
               </div>
 
@@ -264,30 +258,23 @@ function AboutUs({ onNavigateHome, onNavigateServices, onOpenVideo, onOpenSearch
             </div>
 
             <h2>
-              From Ideas to
-              <span className="gradient-text"> Impact</span>
+              15+ Years of Thriving
+              <span className="gradient-text"> Tech Innovation</span>
             </h2>
 
             <p>
-              Proagnexa Technology started with a simple vision —
-              to bridge the gap between technology and real-world needs.
-              What began as a small team of passionate technology
-              enthusiasts has grown into a trusted technology partner
-              for businesses, startups and enterprises.
+              Proagnexa Technology was founded to bridge complex industry challenges with intelligent, scalable software solutions. Over 15+ years, we have grown into a dependable technology partner for global enterprises, logistics providers, financial platforms, and startups.
             </p>
 
             <p>
-              We believe in innovation, collaboration and continuous
-              learning. Our team works together to build solutions that
-              are not just functional, but also secure, scalable and
-              future-ready.
+              Our logistics-focused workflow automation—spanning robotic process automation (RPA), business workflows, and document processing—streamlines operations, cuts manual workload by up to 40%, and ensures uncompromising data security and regulatory compliance.
             </p>
 
             <div className="story-quote">
               <span>
-                "We don't just build software,
+                "Intelligent automation and scalable technology
                 <br />
-                we build your digital future."
+                built to move your business forward."
               </span>
             </div>
 

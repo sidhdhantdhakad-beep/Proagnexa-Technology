@@ -6,16 +6,17 @@ const industryServices = [
   ['◈', 'Web Application Development', 'Custom ERP, CRM, eCommerce, SaaS Applications with Modern Frontend & Backend Technologies and API Integrations.'],
   ['📱', 'Mobile Application Development', 'Cross-Platform & Native Mobile Apps with MBaaS Integration, App Store Deployment, UI/UX Design & Prototyping.'],
   ['▣', 'White-Label Development Services', 'Deliver Web, Mobile & API Projects under Your Brand with Full Execution and Complete Client Confidentiality.'],
-  ['👥', 'Dedicated Developers Services', 'Hire skilled Frontend, Backend, Mobile, and DevOps Engineers on flexible engagement models.'],
+  ['👥', 'Dedicated Developers Services', 'Hire Skilled Frontend, Backend, Mobile, and DevOps Engineers on Hourly, Part-Time, Full-Time or Project Basis.'],
   ['🚀', 'DevOps & Cloud Partnership Services', 'Enterprise-level CI/CD Automation, Kubernetes Orchestration, Cloud Security & Continuous Monitoring.'],
-  ['◌', 'Maintenance & Support Services', '24/7 Monitoring, Bug Fixes, Security Patches, Performance Optimization & SLA-Based Support.'],
-  ['✦', 'Custom Solutions & White-Label SaaS', 'Ready-to-use Mini-ERP, CRM, eCommerce and industry-specific SaaS products to resell under your brand.'],
+  ['◌', 'Maintenance & Support Services', '24/7 Monitoring, Bug Fixes, Security Patches, Performance Optimization & SLA-Based Support for Smooth Operations.'],
+  ['✦', 'Custom Solutions & White-Label SaaS', 'Ready-to-Use Mini-ERP, CRM, eCommerce & Industry-Specific SaaS Products to Resell under Your Brand Name.'],
 ];
 
 const testimonials = [
-  ['Michael Lee', 'We chose Proagnexa for their industry-specific automation expertise. Their tailored solutions helped us scale faster while reducing operational costs.'],
-  ['Priya Mehta', 'Their dedicated support team and post-launch maintenance made them a dependable long-term technology partner for us.'],
-  ['Amit Jain', 'Proagnexa helped us automate our workflows end-to-end, reducing manual effort and improving efficiency across departments.'],
+  ['Michael Lee', 'We chose Proagnexa Technology for their industry-specific automation expertise. The solutions were tailor-made for our retail operations and helped us scale faster while reducing operational costs.'],
+  ['Priya Mehta', 'What impressed us most is their dedicated support team and post-launch maintenance. They ensured smooth system performance and proactive updates, which made them a long-term technology partner for us.'],
+  ['Amit Jain', 'Proagnexa Technology helped us automate our logistics workflows end-to-end. Their expertise in RPA and process automation reduced our manual workload by 40%, improving efficiency and accuracy across departments.'],
+  ['Anuj Goyal', 'Their team delivered a secure and compliant solution for our financial platform. We were impressed with their commitment to data security and regulatory compliance, which gave us complete peace of mind.'],
 ];
 
 export default function Home({ onOpenVideo }) {
@@ -233,8 +234,8 @@ export default function Home({ onOpenVideo }) {
       <section className="home-company-section">
         <div className="home-company-copy">
           <p className="home-eyebrow">OUR COMPANY</p>
-          <h2>Technology That Moves<br /><span>Business Forward.</span></h2>
-          <p>Proagnexa Technology delivers web, mobile, cloud and automation solutions with the expertise to make complex operations simpler, safer and more efficient.</p>
+          <h2>We’ve Been Thriving in<br /><span>15+ Years.</span></h2>
+          <p>Proagnexa Technology delivers web, mobile, and automation solutions with 15+ years of expertise. Our logistics-focused workflow automation—spanning robotic, business, and document processes—enhances efficiency, compliance, and data security. We provide dedicated support to help businesses of all sizes succeed.</p>
           <a href="/about" className="home-outline-button">Learn About Us <span aria-hidden="true">→</span></a>
         </div>
         <div className="home-company-points">
@@ -247,7 +248,7 @@ export default function Home({ onOpenVideo }) {
       <section className="home-testimonials-section">
         <div className="home-section-heading">
           <p>WHAT OUR CLIENTS SAY</p>
-          <h2>Why Businesses <span>Trust Us.</span></h2>
+          <h2>Why Businesses Trust<br /><span>Proagnexa Technology.</span></h2>
         </div>
         <div className="home-testimonials-grid">
           {testimonials.map(([name, quote]) => (
@@ -255,17 +256,33 @@ export default function Home({ onOpenVideo }) {
               <div className="testimonial-stars" aria-label="5 stars">★★★★★</div>
               <p>&ldquo;{quote}&rdquo;</p>
               <strong>{name}</strong>
-              <span>Proagnexa client</span>
+              <span>Verified Client Review</span>
             </article>
           ))}
         </div>
       </section>
 
       <section className="home-metrics-section" aria-label="Proagnexa achievements">
-        <div><strong>40</strong><span>Happy Clients</span></div>
-        <div><strong>102</strong><span>Finished Projects</span></div>
-        <div><strong>20</strong><span>Skilled Experts</span></div>
-        <div><strong>15</strong><span>Industries Served</span></div>
+        <div className="metric-stat-box">
+          <small>Successfully work with</small>
+          <strong>40</strong>
+          <span>HAPPY CLIENTS</span>
+        </div>
+        <div className="metric-stat-box">
+          <small>Successfully completed</small>
+          <strong>102</strong>
+          <span>FINISHED PROJECTS</span>
+        </div>
+        <div className="metric-stat-box">
+          <small>Recruit more than</small>
+          <strong>20</strong>
+          <span>SKILLED EXPERTS</span>
+        </div>
+        <div className="metric-stat-box">
+          <small>Industries we have served</small>
+          <strong>15</strong>
+          <span>INDUSTRIES</span>
+        </div>
       </section>
     </div>
   );
