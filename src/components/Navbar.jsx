@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, onNavigateServices, currentPage = 'home' }) {
+export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, onNavigateServices, onNavigateCareer, onNavigateContact, onNavigateMobile, currentPage = 'home' }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
@@ -12,6 +12,21 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleServicesNavigation = (event, targetHash = '#services') => {
+    event?.preventDefault();
+    setServicesDropdownOpen(false);
+    setMobileMenuOpen(false);
+    onNavigateServices && onNavigateServices();
+    window.location.hash = targetHash;
+  };
+
+  const handleMobileNavigation = (event) => {
+    event?.preventDefault();
+    setServicesDropdownOpen(false);
+    setMobileMenuOpen(false);
+    onNavigateMobile && onNavigateMobile();
+  };
 
   return (
     <header className={`navbar-wrapper ${scrolled ? 'scrolled' : ''}`}>
@@ -59,12 +74,12 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
               <a href="#about" onClick={(e) => { e.preventDefault(); onNavigateAbout && onNavigateAbout(); }}>About Us</a>
               {currentPage === 'about' && <span className="active-indicator"></span>}
             </li>
-            <li 
+            <li
               className={`nav-item has-dropdown ${currentPage === 'services' ? 'active' : ''}`}
               onMouseEnter={() => setServicesDropdownOpen(true)}
               onMouseLeave={() => setServicesDropdownOpen(false)}
             >
-              <button 
+              <button
                 className="dropdown-trigger"
                 onClick={() => {
                   onNavigateServices && onNavigateServices();
@@ -81,51 +96,52 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
 
               {servicesDropdownOpen && (
                 <div className="dropdown-menu">
-                  <a href="#cloud" className="dropdown-item">
+                  <a href="#services" onClick={handleServicesNavigation} className="dropdown-item">
                     <span className="drop-icon blue">☁️</span>
                     <div>
-                      <strong>Cloud Solutions</strong>
-                      <p>Scalable multi-cloud architecture</p>
+                      <strong>DevOps &amp; Cloud Services</strong>
+                      <p>Reliable infrastructure and delivery</p>
                     </div>
                   </a>
-                  <a href="#devops" className="dropdown-item">
-                    <span className="drop-icon purple">🚀</span>
+                  <a href="#services" onClick={handleServicesNavigation} className="dropdown-item">
+                    <span className="drop-icon purple">⚙️</span>
                     <div>
-                      <strong>DevOps Engineering</strong>
-                      <p>CI/CD automation & pipeline scaling</p>
+                      <strong>Cloud Consulting &amp; Managed Services</strong>
+                      <p>Strategic guidance and 24/7 support</p>
                     </div>
                   </a>
-                  <a href="#mobile" className="dropdown-item">
+                  <a href="#mobile" onClick={handleMobileNavigation} className="dropdown-item">
                     <span className="drop-icon green">📱</span>
                     <div>
-                      <strong>Mobile Apps</strong>
-                      <p>High performance iOS & Android apps</p>
+                      <strong>Mobile Application Development</strong>
+                      <p>High-performance apps for every platform</p>
                     </div>
                   </a>
-                  <a href="#consulting" className="dropdown-item">
-                    <span className="drop-icon violet">⚙️</span>
-                    <div>
-                      <strong>IT Consulting</strong>
-                      <p>Strategic modern enterprise guidance</p>
-                    </div>
-                  </a>
+                  <div className="dropdown-group">
+                    <div className="dropdown-group-title"><span className="drop-icon violet">🤝</span><strong>Agency Partnership</strong></div>
+                    <a href="#service-05" onClick={(event) => handleServicesNavigation(event, '#service-05')} className="dropdown-subitem">White-Label Development</a>
+                    <a href="#service-06" onClick={(event) => handleServicesNavigation(event, '#service-06')} className="dropdown-subitem">Dedicated Developers</a>
+                    <a href="#service-07" onClick={(event) => handleServicesNavigation(event, '#service-07')} className="dropdown-subitem">DevOps &amp; Cloud Partnership</a>
+                  </div>
                 </div>
               )}
             </li>
-            <li className="nav-item">
-              <a href="#career">Career</a>
+            <li className={`nav-item ${currentPage === 'career' ? 'active' : ''}`}>
+              <a href="#career" onClick={(e) => { e.preventDefault(); onNavigateCareer && onNavigateCareer(); }}>Career</a>
+              {currentPage === 'career' && <span className="active-indicator"></span>}
             </li>
-            <li className="nav-item">
-              <a href="#contact">Contact</a>
+            <li className={`nav-item ${currentPage === 'contact' ? 'active' : ''}`}>
+              <a href="#contact" onClick={(e) => { e.preventDefault(); onNavigateContact && onNavigateContact(); }}>Contact</a>
+              {currentPage === 'contact' && <span className="active-indicator"></span>}
             </li>
           </ul>
         </nav>
 
         {/* Right Action Icons & CTA */}
         <div className="navbar-actions">
-          <button 
-            className="search-button" 
-            onClick={onOpenSearch} 
+          <button
+            className="search-button"
+            onClick={onOpenSearch}
             aria-label="Search site"
             title="Search"
           >
@@ -135,16 +151,8 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
             </svg>
           </button>
 
-          <a href="#get-started" className="btn-get-started">
-            <span>Get Started</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-
           {/* Hamburger toggle */}
-          <button 
+          <button
             className={`mobile-toggle ${mobileMenuOpen ? 'open' : ''}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Navigation Menu"
@@ -167,24 +175,24 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
               <a href="#about" onClick={() => { setMobileMenuOpen(false); onNavigateAbout && onNavigateAbout(); }} className={currentPage === 'about' ? 'mobile-active' : ''}>About Us</a>
             </li>
             <li>
-              <a href="#services" onClick={() => { setMobileMenuOpen(false); onNavigateServices && onNavigateServices(); }} className={currentPage === 'services' ? 'mobile-active' : ''}>Services</a>
+              <a href="#services" onClick={handleServicesNavigation} className={currentPage === 'services' ? 'mobile-active' : ''}>Services</a>
+              <div className="mobile-service-links">
+                <a href="#services" onClick={handleServicesNavigation}>DevOps &amp; Cloud Services</a>
+                <a href="#services" onClick={handleServicesNavigation}>Cloud Consulting &amp; Managed Services</a>
+                <a href="#mobile" onClick={handleMobileNavigation}>Mobile Application Development</a>
+                <a href="#services" onClick={handleServicesNavigation}>Agency Partnership</a>
+                <a href="#services" onClick={handleServicesNavigation}>White-Label Development</a>
+                <a href="#services" onClick={handleServicesNavigation}>Dedicated Developers</a>
+                <a href="#services" onClick={handleServicesNavigation}>DevOps &amp; Cloud Partnership</a>
+              </div>
             </li>
             <li>
-              <a href="#career" onClick={() => setMobileMenuOpen(false)}>Career</a>
+              <a href="#career" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); onNavigateCareer && onNavigateCareer(); }} className={currentPage === 'career' ? 'mobile-active' : ''}>Career</a>
             </li>
             <li>
-              <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+              <a href="#contact" onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); onNavigateContact && onNavigateContact(); }} className={currentPage === 'contact' ? 'mobile-active' : ''}>Contact</a>
             </li>
           </ul>
-          <div className="mobile-cta-wrap">
-            <a href="#get-started" onClick={() => setMobileMenuOpen(false)} className="btn-get-started w-full">
-              <span>Get Started</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
         </div>
       )}
     </header>

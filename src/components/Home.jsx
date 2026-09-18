@@ -1,9 +1,27 @@
-import React from 'react';
 import developerImg from '../assets/developer-hero.jpg';
+
+const industryServices = [
+  ['☁️', 'DevOps and Cloud Services', 'CI/CD Pipeline Setup, Infrastructure as Code, Docker, Kubernetes, Cloud Migration, Monitoring & Security Hardening.'],
+  ['⚙️', 'Cloud Consulting and Managed Services', 'Cloud Architecture Design, Hybrid & Multi-Cloud Setups, 24/7 Monitoring, Backup & Disaster Recovery Solutions.'],
+  ['◈', 'Web Application Development', 'Custom ERP, CRM, eCommerce, SaaS Applications with Modern Frontend & Backend Technologies and API Integrations.'],
+  ['📱', 'Mobile Application Development', 'Cross-Platform & Native Mobile Apps with MBaaS Integration, App Store Deployment, UI/UX Design & Prototyping.'],
+  ['▣', 'White-Label Development Services', 'Deliver Web, Mobile & API Projects under Your Brand with Full Execution and Complete Client Confidentiality.'],
+  ['👥', 'Dedicated Developers Services', 'Hire skilled Frontend, Backend, Mobile, and DevOps Engineers on flexible engagement models.'],
+  ['🚀', 'DevOps & Cloud Partnership Services', 'Enterprise-level CI/CD Automation, Kubernetes Orchestration, Cloud Security & Continuous Monitoring.'],
+  ['◌', 'Maintenance & Support Services', '24/7 Monitoring, Bug Fixes, Security Patches, Performance Optimization & SLA-Based Support.'],
+  ['✦', 'Custom Solutions & White-Label SaaS', 'Ready-to-use Mini-ERP, CRM, eCommerce and industry-specific SaaS products to resell under your brand.'],
+];
+
+const testimonials = [
+  ['Michael Lee', 'We chose Proagnexa for their industry-specific automation expertise. Their tailored solutions helped us scale faster while reducing operational costs.'],
+  ['Priya Mehta', 'Their dedicated support team and post-launch maintenance made them a dependable long-term technology partner for us.'],
+  ['Amit Jain', 'Proagnexa helped us automate our workflows end-to-end, reducing manual effort and improving efficiency across departments.'],
+];
 
 export default function Home({ onOpenVideo }) {
   return (
-    <section className="hero-section" id="home">
+    <div className="home-page" id="home">
+    <section className="hero-section">
       {/* Background Decorative Gradient Blobs & Patterns */}
       <div className="bg-decorations" aria-hidden="true">
         <div className="blob blob-top-left"></div>
@@ -78,7 +96,7 @@ export default function Home({ onOpenVideo }) {
 
           {/* Action Buttons */}
           <div className="hero-buttons">
-            <a href="#services" className="btn-explore">
+            <a href="/services" className="btn-explore">
               <span>Explore Our Services</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -193,5 +211,62 @@ export default function Home({ onOpenVideo }) {
         </div>
       </div>
     </section>
+
+      <section className="industry-services-section">
+        <div className="home-section-heading">
+          <p>INDUSTRY-SPECIFIC SOLUTIONS</p>
+          <h2>Highly Tailored IT Solutions<br /><span>For Your Business.</span></h2>
+          <p>From cloud infrastructure to custom software, we build technology that fits your industry, workflow and growth goals.</p>
+        </div>
+        <div className="industry-services-grid">
+          {industryServices.map(([icon, title, description]) => (
+            <article className="industry-service-card" key={title}>
+              <div className="industry-service-icon">{icon}</div>
+              <h3>{title}</h3>
+              <p>{description}</p>
+              <a href={title === 'Mobile Application Development' ? '/services/mobile-application-development' : '#services'}>Discover now <span aria-hidden="true">→</span></a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="home-company-section">
+        <div className="home-company-copy">
+          <p className="home-eyebrow">OUR COMPANY</p>
+          <h2>Technology That Moves<br /><span>Business Forward.</span></h2>
+          <p>Proagnexa Technology delivers web, mobile, cloud and automation solutions with the expertise to make complex operations simpler, safer and more efficient.</p>
+          <a href="/about" className="home-outline-button">Learn About Us <span aria-hidden="true">→</span></a>
+        </div>
+        <div className="home-company-points">
+          <a href="/about"><strong>01</strong><span>How we can help your business?</span><b>↗</b></a>
+          <a href="/about"><strong>02</strong><span>Why become our partner?</span><b>↗</b></a>
+          <a href="/services"><strong>03</strong><span>What makes Proagnexa different?</span><b>↗</b></a>
+        </div>
+      </section>
+
+      <section className="home-testimonials-section">
+        <div className="home-section-heading">
+          <p>WHAT OUR CLIENTS SAY</p>
+          <h2>Why Businesses <span>Trust Us.</span></h2>
+        </div>
+        <div className="home-testimonials-grid">
+          {testimonials.map(([name, quote]) => (
+            <article className="home-testimonial-card" key={name}>
+              <div className="testimonial-stars" aria-label="5 stars">★★★★★</div>
+              <p>&ldquo;{quote}&rdquo;</p>
+              <strong>{name}</strong>
+              <span>Proagnexa client</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="home-metrics-section" aria-label="Proagnexa achievements">
+        <div><strong>40</strong><span>Happy Clients</span></div>
+        <div><strong>102</strong><span>Finished Projects</span></div>
+        <div><strong>20</strong><span>Skilled Experts</span></div>
+        <div><strong>15</strong><span>Industries Served</span></div>
+      </section>
+    </div>
   );
 }

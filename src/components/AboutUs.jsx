@@ -113,7 +113,6 @@ function AboutUs({ onNavigateHome, onNavigateServices, onOpenVideo, onOpenSearch
               Services <span className="nav-arrow">⌄</span>
             </a>
             <a href="#career">Career</a>
-            <a href="#contact">Contact</a>
           </nav>
 
           <div className="about-nav-actions">
@@ -146,6 +145,7 @@ function AboutUs({ onNavigateHome, onNavigateServices, onOpenVideo, onOpenSearch
             <a href="/about" className="active">About Us</a>
             <a href="#services" onClick={(e) => { e.preventDefault(); onNavigateHome && onNavigateHome(); }}>Services</a>
             <a href="#career">Career</a>
+            <a href="#contact">Contact</a>
             <a href="#contact">Contact</a>
           </div>
         )}
@@ -484,66 +484,6 @@ function AboutUs({ onNavigateHome, onNavigateServices, onOpenVideo, onOpenSearch
 
         </div>
       </section>
-
-      {/* ================= FOOTER ================= */}
-      <footer className="about-footer">
-
-        <div className="about-container footer-grid">
-
-          <div className="footer-brand">
-
-            <a href="/" onClick={(e) => { e.preventDefault(); onNavigateHome && onNavigateHome(); }} className="about-logo">
-              <div className="logo-mark">
-                <svg width="32" height="32" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="44" height="44" rx="12" fill="url(#aboutLogoGrad)" />
-                  <path d="M14 11H26C31.5 11 35 14.5 35 19.5C35 24.5 31.5 28 26 28H20.5V33H14V11Z" fill="white" />
-                  <path d="M20.5 16.5H25.5C28.2 16.5 29.8 17.8 29.8 19.5C29.8 21.2 28.2 22.5 25.5 22.5H20.5V16.5Z" fill="url(#aboutLogoGrad)" />
-                </svg>
-              </div>
-
-              <div className="logo-text">
-                <strong>Proagnexa</strong>
-                <span>Technology</span>
-              </div>
-            </a>
-
-            <p>
-              Your technology partner for a smarter tomorrow.
-            </p>
-
-          </div>
-
-          <div className="footer-column">
-            <h4>Company</h4>
-            <a href="/about">About Us</a>
-            <a href="#career">Career</a>
-            <a href="#contact">Contact</a>
-          </div>
-
-          <div className="footer-column">
-            <h4>Services</h4>
-            <a href="#services" onClick={(e) => { e.preventDefault(); onNavigateHome && onNavigateHome(); }}>Cloud</a>
-            <a href="#services" onClick={(e) => { e.preventDefault(); onNavigateHome && onNavigateHome(); }}>DevOps</a>
-            <a href="#services" onClick={(e) => { e.preventDefault(); onNavigateHome && onNavigateHome(); }}>Mobile Apps</a>
-            <a href="#services" onClick={(e) => { e.preventDefault(); onNavigateHome && onNavigateHome(); }}>IT Consulting</a>
-          </div>
-
-          <div className="footer-column">
-            <h4>Connect</h4>
-            <a href="#linkedin">LinkedIn</a>
-            <a href="#github">GitHub</a>
-            <a href="#instagram">Instagram</a>
-          </div>
-
-        </div>
-
-        <div className="footer-bottom">
-          <div className="about-container">
-            © {new Date().getFullYear()} Proagnexa Technology. All rights reserved.
-          </div>
-        </div>
-
-      </footer>
 
     </div>
   );

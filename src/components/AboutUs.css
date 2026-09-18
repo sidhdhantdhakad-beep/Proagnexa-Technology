@@ -1,3 +1,4 @@
+.about-navbar { display: none; }
 /* ==========================================================================
    ABOUT US PAGE STYLING - PROAGNEXA TECHNOLOGY
    ========================================================================== */
@@ -11,9 +12,10 @@
 }
 
 .about-container {
-  max-width: var(--container-max-width, 1240px);
-  margin: 0 auto;
-  padding: 0 24px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 7%;
 }
 
 /* ================= NAVBAR ================= */
@@ -29,12 +31,13 @@
 }
 
 .about-nav-inner {
-  max-width: var(--container-max-width, 1240px);
-  margin: 0 auto;
-  padding: 16px 24px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 16px 7%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .about-logo {
@@ -73,6 +76,7 @@
   display: flex;
   align-items: center;
   gap: 32px;
+  margin-left: 56px;
 }
 
 .about-nav-links a {
@@ -105,6 +109,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
+  margin-left: auto;
 }
 
 .get-started-btn {
