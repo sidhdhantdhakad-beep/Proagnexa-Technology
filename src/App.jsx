@@ -11,6 +11,7 @@ import DevOpsAndCloudServices from './components/DevOpsAndCloudServices';
 import CloudConsultingAndManagedServices from './components/CloudConsultingAndManagedServices';
 import WebApplicationDevelopment from './components/WebApplicationDevelopment';
 import WhiteLabelDevelopmentServices from './components/WhiteLabelDevelopmentServices';
+import DevOpsAndCloudPartnership from './components/DevOpsAndCloudPartnership';
 import VideoModal from './components/VideoModal';
 import SearchModal from './components/SearchModal';
 import Footer from './components/Footer';
@@ -25,6 +26,8 @@ function App() {
   const currentPage =
     path === '/about'
       ? 'about'
+      : path === '/services/devops-and-cloud-partnership' || path === '/devops-and-cloud-partnership' || path === '/devops-partnership'
+      ? 'devops-partnership'
       : path === '/services/white-label-development-services' || path === '/white-label-development-services' || path === '/white-label'
       ? 'whitelabel'
       : path === '/services/web-application-development' || path === '/web-application-development' || path === '/web-development'
@@ -53,6 +56,7 @@ function App() {
   const navigateToServices = () => goTo('/services');
   const navigateToCareer = () => goTo('/career');
   const navigateToContact = () => goTo('/contact');
+  const navigateToDevOpsPartnership = () => goTo('/services/devops-and-cloud-partnership');
   const navigateToWhiteLabel = () => goTo('/services/white-label-development-services');
   const navigateToWebApp = () => goTo('/services/web-application-development');
   const navigateToMobile = () => goTo('/services/mobile-application-development');
@@ -68,6 +72,7 @@ function App() {
         onNavigateServices={navigateToServices}
         onNavigateCareer={navigateToCareer}
         onNavigateContact={navigateToContact}
+        onNavigateDevOpsPartnership={navigateToDevOpsPartnership}
         onNavigateWhiteLabel={navigateToWhiteLabel}
         onNavigateWebApp={navigateToWebApp}
         onNavigateMobile={navigateToMobile}
@@ -81,6 +86,7 @@ function App() {
       {currentPage === 'about' && <AboutUs onNavigateHome={navigateToHome} onNavigateServices={navigateToServices} onOpenVideo={() => setVideoModalOpen(true)} onOpenSearch={() => setSearchModalOpen(true)} />}
       {currentPage === 'career' && <Careers />}
       {currentPage === 'contact' && <Contact />}
+      {currentPage === 'devops-partnership' && <DevOpsAndCloudPartnership />}
       {currentPage === 'whitelabel' && <WhiteLabelDevelopmentServices />}
       {currentPage === 'webapp' && <WebApplicationDevelopment />}
       {currentPage === 'mobile' && <MobileApplicationDevelopment />}
