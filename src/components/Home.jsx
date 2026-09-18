@@ -225,7 +225,7 @@ export default function Home({ onOpenVideo }) {
               <div className="industry-service-icon">{icon}</div>
               <h3>{title}</h3>
               <p>{description}</p>
-              <a href={title === 'Mobile Application Development' ? '/services/mobile-application-development' : title === 'DevOps and Cloud Services' ? '/services/devops-and-cloud-services' : title === 'Cloud Consulting and Managed Services' ? '/services/cloud-consulting-and-managed-services' : title === 'Web Application Development' ? '/services/web-application-development' : title === 'White-Label Development Services' ? '/services/white-label-development-services' : title === 'DevOps & Cloud Partnership Services' ? '/services/devops-and-cloud-partnership' : '#services'}>Discover now <span aria-hidden="true">→</span></a>
+              <a href={title === 'Mobile Application Development' ? '/services/mobile-application-development' : title === 'DevOps and Cloud Services' ? '/services/devops-and-cloud-services' : title === 'Cloud Consulting and Managed Services' ? '/services/cloud-consulting-and-managed-services' : title === 'Web Application Development' ? '/services/web-application-development' : title === 'White-Label Development Services' ? '/services/white-label-development-services' : title === 'DevOps & Cloud Partnership Services' ? '/services/devops-and-cloud-partnership' : title === 'Maintenance & Support Services' ? '/services/maintenance-and-support-services' : '#services'}>Discover now <span aria-hidden="true">→</span></a>
             </article>
           ))}
         </div>

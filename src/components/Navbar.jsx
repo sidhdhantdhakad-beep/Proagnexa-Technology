@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Logo from './Logo';
 
-export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, onNavigateServices, onNavigateCareer, onNavigateContact, onNavigateMobile, onNavigateDevOps, onNavigateCloudConsulting, onNavigateWebApp, onNavigateWhiteLabel, onNavigateDevOpsPartnership, currentPage = 'home' }) {
+export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, onNavigateServices, onNavigateCareer, onNavigateContact, onNavigateMobile, onNavigateDevOps, onNavigateCloudConsulting, onNavigateWebApp, onNavigateWhiteLabel, onNavigateDevOpsPartnership, onNavigateMaintenance, currentPage = 'home' }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
@@ -20,6 +20,13 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
     setMobileMenuOpen(false);
     onNavigateServices && onNavigateServices();
     window.location.hash = targetHash;
+  };
+
+  const handleMaintenanceNavigation = (event) => {
+    event?.preventDefault();
+    setServicesDropdownOpen(false);
+    setMobileMenuOpen(false);
+    onNavigateMaintenance && onNavigateMaintenance();
   };
 
   const handleDevOpsPartnershipNavigation = (event) => {
@@ -99,7 +106,7 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
               </button>
-              {(currentPage === 'services' || currentPage === 'mobile' || currentPage === 'devops' || currentPage === 'cloud-consulting' || currentPage === 'webapp' || currentPage === 'whitelabel' || currentPage === 'devops-partnership') && <span className="active-indicator"></span>}
+              {(currentPage === 'services' || currentPage === 'mobile' || currentPage === 'devops' || currentPage === 'cloud-consulting' || currentPage === 'webapp' || currentPage === 'whitelabel' || currentPage === 'devops-partnership' || currentPage === 'maintenance') && <span className="active-indicator"></span>}
 
               {servicesDropdownOpen && (
                 <div className="dropdown-menu">
@@ -129,6 +136,13 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
                     <div>
                       <strong>Mobile Application Development</strong>
                       <p>High-performance apps for every platform</p>
+                    </div>
+                  </a>
+                  <a href="#maintenance" onClick={handleMaintenanceNavigation} className="dropdown-item">
+                    <span className="drop-icon yellow">🛠️</span>
+                    <div>
+                      <strong>Maintenance &amp; Support Services</strong>
+                      <p>24/7 SLA monitoring, bug fixes &amp; FinOps</p>
                     </div>
                   </a>
                   <div className="dropdown-group">
@@ -199,6 +213,7 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
                 <a href="#white-label" onClick={handleWhiteLabelNavigation}>White-Label Development</a>
                 <a href="#services" onClick={handleServicesNavigation}>Dedicated Developers</a>
                 <a href="#devops-partnership" onClick={handleDevOpsPartnershipNavigation}>DevOps &amp; Cloud Partnership</a>
+                <a href="#maintenance" onClick={handleMaintenanceNavigation}>Maintenance &amp; Support Services</a>
               </div>
             </li>
             <li>
