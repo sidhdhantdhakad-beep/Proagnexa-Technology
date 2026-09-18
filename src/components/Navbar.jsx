@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Logo from './Logo';
 
-export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, onNavigateServices, onNavigateCareer, onNavigateContact, onNavigateMobile, onNavigateDevOps, onNavigateCloudConsulting, onNavigateWebApp, onNavigateWhiteLabel, onNavigateDevOpsPartnership, onNavigateMaintenance, currentPage = 'home' }) {
+export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, onNavigateServices, onNavigateCareer, onNavigateContact, onNavigateMobile, onNavigateDevOps, onNavigateCloudConsulting, onNavigateWebApp, onNavigateWhiteLabel, onNavigateDevOpsPartnership, onNavigateMaintenance, onNavigateCustomSaaS, currentPage = 'home' }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
@@ -20,6 +20,13 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
     setMobileMenuOpen(false);
     onNavigateServices && onNavigateServices();
     window.location.hash = targetHash;
+  };
+
+  const handleCustomSaaSNavigation = (event) => {
+    event?.preventDefault();
+    setServicesDropdownOpen(false);
+    setMobileMenuOpen(false);
+    onNavigateCustomSaaS && onNavigateCustomSaaS();
   };
 
   const handleMaintenanceNavigation = (event) => {
@@ -91,7 +98,7 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
               {currentPage === 'about' && <span className="active-indicator"></span>}
             </li>
             <li
-              className={`nav-item has-dropdown ${currentPage === 'services' || currentPage === 'mobile' || currentPage === 'devops' || currentPage === 'cloud-consulting' || currentPage === 'webapp' ? 'active' : ''}`}
+              className={`nav-item has-dropdown ${currentPage === 'services' || currentPage === 'mobile' || currentPage === 'devops' || currentPage === 'cloud-consulting' || currentPage === 'webapp' || currentPage === 'whitelabel' || currentPage === 'devops-partnership' || currentPage === 'maintenance' || currentPage === 'custom-saas' ? 'active' : ''}`}
               onMouseEnter={() => setServicesDropdownOpen(true)}
               onMouseLeave={() => setServicesDropdownOpen(false)}
             >
@@ -106,7 +113,7 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
               </button>
-              {(currentPage === 'services' || currentPage === 'mobile' || currentPage === 'devops' || currentPage === 'cloud-consulting' || currentPage === 'webapp' || currentPage === 'whitelabel' || currentPage === 'devops-partnership' || currentPage === 'maintenance') && <span className="active-indicator"></span>}
+              {(currentPage === 'services' || currentPage === 'mobile' || currentPage === 'devops' || currentPage === 'cloud-consulting' || currentPage === 'webapp' || currentPage === 'whitelabel' || currentPage === 'devops-partnership' || currentPage === 'maintenance' || currentPage === 'custom-saas') && <span className="active-indicator"></span>}
 
               {servicesDropdownOpen && (
                 <div className="dropdown-menu">
@@ -145,11 +152,19 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
                       <p>24/7 SLA monitoring, bug fixes &amp; FinOps</p>
                     </div>
                   </a>
+                  <a href="#custom-saas" onClick={handleCustomSaaSNavigation} className="dropdown-item">
+                    <span className="drop-icon violet">🚀</span>
+                    <div>
+                      <strong>Custom Solutions &amp; White-Label SaaS</strong>
+                      <p>Ready-to-use Mini-ERP, CRM &amp; vertical SaaS</p>
+                    </div>
+                  </a>
                   <div className="dropdown-group">
                     <div className="dropdown-group-title"><span className="drop-icon violet">🤝</span><strong>Agency Partnership</strong></div>
                     <a href="#white-label" onClick={handleWhiteLabelNavigation} className="dropdown-subitem">White-Label Development</a>
                     <a href="#service-06" onClick={(event) => handleServicesNavigation(event, '#service-06')} className="dropdown-subitem">Dedicated Developers</a>
                     <a href="#devops-partnership" onClick={handleDevOpsPartnershipNavigation} className="dropdown-subitem">DevOps &amp; Cloud Partnership</a>
+                    <a href="#custom-saas" onClick={handleCustomSaaSNavigation} className="dropdown-subitem">White-Label SaaS Solutions</a>
                   </div>
                 </div>
               )}
@@ -209,6 +224,7 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
                 <a href="#devops" onClick={handleDevOpsNavigation}>DevOps &amp; Cloud Services</a>
                 <a href="#cloud-consulting" onClick={handleCloudConsultingNavigation}>Cloud Consulting &amp; Managed Services</a>
                 <a href="#mobile" onClick={handleMobileNavigation}>Mobile Application Development</a>
+                <a href="#custom-saas" onClick={handleCustomSaaSNavigation}>Custom Solutions &amp; White-Label SaaS</a>
                 <a href="#services" onClick={handleServicesNavigation}>Agency Partnership</a>
                 <a href="#white-label" onClick={handleWhiteLabelNavigation}>White-Label Development</a>
                 <a href="#services" onClick={handleServicesNavigation}>Dedicated Developers</a>

@@ -13,6 +13,7 @@ import WebApplicationDevelopment from './components/WebApplicationDevelopment';
 import WhiteLabelDevelopmentServices from './components/WhiteLabelDevelopmentServices';
 import DevOpsAndCloudPartnership from './components/DevOpsAndCloudPartnership';
 import MaintenanceAndSupportServices from './components/MaintenanceAndSupportServices';
+import CustomSolutionsAndWhiteLabelSaaS from './components/CustomSolutionsAndWhiteLabelSaaS';
 import VideoModal from './components/VideoModal';
 import SearchModal from './components/SearchModal';
 import Footer from './components/Footer';
@@ -27,6 +28,8 @@ function App() {
   const currentPage =
     path === '/about'
       ? 'about'
+      : path === '/services/custom-solutions-and-white-label-saas' || path === '/custom-solutions-and-white-label-saas' || path === '/white-label-saas'
+      ? 'custom-saas'
       : path === '/services/maintenance-and-support-services' || path === '/maintenance-and-support-services' || path === '/maintenance'
       ? 'maintenance'
       : path === '/services/devops-and-cloud-partnership' || path === '/devops-and-cloud-partnership' || path === '/devops-partnership'
@@ -59,6 +62,7 @@ function App() {
   const navigateToServices = () => goTo('/services');
   const navigateToCareer = () => goTo('/career');
   const navigateToContact = () => goTo('/contact');
+  const navigateToCustomSaaS = () => goTo('/services/custom-solutions-and-white-label-saas');
   const navigateToMaintenance = () => goTo('/services/maintenance-and-support-services');
   const navigateToDevOpsPartnership = () => goTo('/services/devops-and-cloud-partnership');
   const navigateToWhiteLabel = () => goTo('/services/white-label-development-services');
@@ -76,6 +80,7 @@ function App() {
         onNavigateServices={navigateToServices}
         onNavigateCareer={navigateToCareer}
         onNavigateContact={navigateToContact}
+        onNavigateCustomSaaS={navigateToCustomSaaS}
         onNavigateMaintenance={navigateToMaintenance}
         onNavigateDevOpsPartnership={navigateToDevOpsPartnership}
         onNavigateWhiteLabel={navigateToWhiteLabel}
@@ -91,6 +96,7 @@ function App() {
       {currentPage === 'about' && <AboutUs onNavigateHome={navigateToHome} onNavigateServices={navigateToServices} onOpenVideo={() => setVideoModalOpen(true)} onOpenSearch={() => setSearchModalOpen(true)} />}
       {currentPage === 'career' && <Careers />}
       {currentPage === 'contact' && <Contact />}
+      {currentPage === 'custom-saas' && <CustomSolutionsAndWhiteLabelSaaS />}
       {currentPage === 'maintenance' && <MaintenanceAndSupportServices />}
       {currentPage === 'devops-partnership' && <DevOpsAndCloudPartnership />}
       {currentPage === 'whitelabel' && <WhiteLabelDevelopmentServices />}
