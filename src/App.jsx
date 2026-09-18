@@ -10,6 +10,7 @@ import MobileApplicationDevelopment from './components/MobileApplicationDevelopm
 import DevOpsAndCloudServices from './components/DevOpsAndCloudServices';
 import CloudConsultingAndManagedServices from './components/CloudConsultingAndManagedServices';
 import WebApplicationDevelopment from './components/WebApplicationDevelopment';
+import WhiteLabelDevelopmentServices from './components/WhiteLabelDevelopmentServices';
 import VideoModal from './components/VideoModal';
 import SearchModal from './components/SearchModal';
 import Footer from './components/Footer';
@@ -24,6 +25,8 @@ function App() {
   const currentPage =
     path === '/about'
       ? 'about'
+      : path === '/services/white-label-development-services' || path === '/white-label-development-services' || path === '/white-label'
+      ? 'whitelabel'
       : path === '/services/web-application-development' || path === '/web-application-development' || path === '/web-development'
       ? 'webapp'
       : path === '/services/cloud-consulting-and-managed-services' || path === '/cloud-consulting'
@@ -50,6 +53,7 @@ function App() {
   const navigateToServices = () => goTo('/services');
   const navigateToCareer = () => goTo('/career');
   const navigateToContact = () => goTo('/contact');
+  const navigateToWhiteLabel = () => goTo('/services/white-label-development-services');
   const navigateToWebApp = () => goTo('/services/web-application-development');
   const navigateToMobile = () => goTo('/services/mobile-application-development');
   const navigateToDevOps = () => goTo('/services/devops-and-cloud-services');
@@ -64,6 +68,7 @@ function App() {
         onNavigateServices={navigateToServices}
         onNavigateCareer={navigateToCareer}
         onNavigateContact={navigateToContact}
+        onNavigateWhiteLabel={navigateToWhiteLabel}
         onNavigateWebApp={navigateToWebApp}
         onNavigateMobile={navigateToMobile}
         onNavigateDevOps={navigateToDevOps}
@@ -76,6 +81,7 @@ function App() {
       {currentPage === 'about' && <AboutUs onNavigateHome={navigateToHome} onNavigateServices={navigateToServices} onOpenVideo={() => setVideoModalOpen(true)} onOpenSearch={() => setSearchModalOpen(true)} />}
       {currentPage === 'career' && <Careers />}
       {currentPage === 'contact' && <Contact />}
+      {currentPage === 'whitelabel' && <WhiteLabelDevelopmentServices />}
       {currentPage === 'webapp' && <WebApplicationDevelopment />}
       {currentPage === 'mobile' && <MobileApplicationDevelopment />}
       {currentPage === 'devops' && <DevOpsAndCloudServices />}
