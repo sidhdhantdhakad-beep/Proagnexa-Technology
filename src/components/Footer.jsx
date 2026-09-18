@@ -1,3 +1,4 @@
+import Logo from "./Logo";
 import "./Footer.css";
 
 const Footer = () => {
@@ -29,15 +30,8 @@ const Footer = () => {
         {/* Brand */}
         <div className="footer-brand">
 
-          <a href="/" className="footer-logo">
-            <div className="footer-logo-icon">
-              P
-            </div>
-
-            <div>
-              <strong>Proagnexa</strong>
-              <span>Technology</span>
-            </div>
+          <a href="/" className="footer-logo-link" aria-label="Pragnexa Technologies Home">
+            <Logo size="medium" light={true} showTagline={true} />
           </a>
 
           <p>

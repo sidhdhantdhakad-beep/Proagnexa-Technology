@@ -1,0 +1,134 @@
+/* ==========================================================================
+   PRAGNEXA TECHNOLOGIES - OFFICIAL LOGO COMPONENT STYLES
+   ========================================================================== */
+
+.pragnexa-logo-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  user-select: none;
+  transition: transform 0.25s ease;
+}
+
+.pragnexa-logo-container:hover {
+  transform: translateY(-1px);
+}
+
+.logo-icon-frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-icon-image {
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.pragnexa-logo-container:hover .logo-icon-image {
+  filter: drop-shadow(0 6px 16px rgba(0, 168, 255, 0.35));
+  transform: scale(1.04);
+}
+
+/* Sizing Variants */
+.pragnexa-logo-container.small .logo-icon-image {
+  height: 32px;
+}
+.pragnexa-logo-container.small .logo-title {
+  font-size: 17px;
+  letter-spacing: 1.5px;
+}
+.pragnexa-logo-container.small .logo-subtitle {
+  font-size: 8.5px;
+  letter-spacing: 3.5px;
+}
+
+.pragnexa-logo-container.medium .logo-icon-image {
+  height: 44px;
+}
+.pragnexa-logo-container.medium .logo-title {
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+.pragnexa-logo-container.medium .logo-subtitle {
+  font-size: 9.5px;
+  letter-spacing: 4.5px;
+}
+
+.pragnexa-logo-container.large .logo-icon-image {
+  height: 56px;
+}
+.pragnexa-logo-container.large .logo-title {
+  font-size: 28px;
+  letter-spacing: 2.5px;
+}
+.pragnexa-logo-container.large .logo-subtitle {
+  font-size: 11.5px;
+  letter-spacing: 5.5px;
+}
+
+/* Typography */
+.logo-brand-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-title {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-weight: 900;
+  color: #1a202c;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.text-pragnex {
+  color: #111827;
+}
+
+/* The 'A' with cyan/blue accent matching the logo */
+.text-accent-a {
+  position: relative;
+  color: #0284c7;
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.logo-subtitle {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #4b5563;
+  margin-top: 3px;
+}
+
+.logo-tagline {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-top: 5px;
+}
+
+/* Light Theme (for dark backgrounds, e.g. Footer) */
+.pragnexa-logo-container.theme-light .text-pragnex {
+  color: #f8fafc;
+}
+.pragnexa-logo-container.theme-light .logo-subtitle {
+  color: #cbd5e1;
+}
+.pragnexa-logo-container.theme-light .logo-tagline {
+  color: #94a3b8;
+}
+.pragnexa-logo-container.theme-light .logo-icon-image {
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.4));
+}

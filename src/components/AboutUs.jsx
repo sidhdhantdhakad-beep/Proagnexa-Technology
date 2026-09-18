@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Logo from "./Logo";
 import "./AboutUs.css";
 
 const values = [
@@ -84,26 +85,8 @@ function AboutUs({ onNavigateHome, onNavigateServices, onOpenVideo, onOpenSearch
       <header className="about-navbar">
         <div className="about-nav-inner">
 
-          <a href="/" onClick={(e) => { e.preventDefault(); onNavigateHome && onNavigateHome(); }} className="about-logo">
-            <div className="logo-mark">
-              <svg width="34" height="34" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="aboutLogoGrad" x1="2" y1="2" x2="42" y2="42" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#00c0fa" />
-                    <stop offset="50%" stopColor="#1e68f3" />
-                    <stop offset="100%" stopColor="#7932e6" />
-                  </linearGradient>
-                </defs>
-                <rect width="44" height="44" rx="12" fill="url(#aboutLogoGrad)" />
-                <path d="M14 11H26C31.5 11 35 14.5 35 19.5C35 24.5 31.5 28 26 28H20.5V33H14V11Z" fill="white" />
-                <path d="M20.5 16.5H25.5C28.2 16.5 29.8 17.8 29.8 19.5C29.8 21.2 28.2 22.5 25.5 22.5H20.5V16.5Z" fill="url(#aboutLogoGrad)" />
-              </svg>
-            </div>
-
-            <div className="logo-text">
-              <strong>Proagnexa</strong>
-              <span>Technology</span>
-            </div>
+          <a href="/" onClick={(e) => { e.preventDefault(); onNavigateHome && onNavigateHome(); }} className="about-logo" aria-label="Pragnexa Technologies Home">
+            <Logo size="medium" />
           </a>
 
           <nav className="about-nav-links">

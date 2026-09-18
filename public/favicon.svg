@@ -1,0 +1,45 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Metallic Gradients -->
+    <linearGradient id="topFacet" x1="20" y1="20" x2="90" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#4a5568" />
+      <stop offset="50%" stopColor="#2d3748" />
+      <stop offset="100%" stopColor="#1a202c" />
+    </linearGradient>
+
+    <linearGradient id="leftStem" x1="20" y1="40" x2="50" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#3b4252" />
+      <stop offset="50%" stopColor="#242933" />
+      <stop offset="100%" stopColor="#15181e" />
+    </linearGradient>
+
+    <linearGradient id="rightLoop" x1="80" y1="40" x2="100" y2="85" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#434c5e" />
+      <stop offset="100%" stopColor="#1e222a" />
+    </linearGradient>
+
+    <!-- Glowing Blue Center Core -->
+    <linearGradient id="blueCore" x1="55" y1="52" x2="72" y2="92" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#38bdf8" />
+      <stop offset="40%" stopColor="#00a8ff" />
+      <stop offset="100%" stopColor="#0066cc" />
+    </linearGradient>
+
+    <filter id="coreGlow" x="35" y="35" width="55" height="75" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Top Chevron Facet -->
+  <path d="M42 20 L86 42 L66 60 L24 38 Z" fill="url(#topFacet)" />
+
+  <!-- Left Vertical Stem -->
+  <path d="M23 44 L44 55 L44 106 L23 95 Z" fill="url(#leftStem)" />
+
+  <!-- Glowing Blue Center -->
+  <path d="M50 58 L69 68 L69 98 L50 88 Z" fill="url(#blueCore)" filter="url(#coreGlow)" />
+
+  <!-- Right Loop / Angled Return -->
+  <path d="M88 44 L105 60 L85 82 L72 75 L72 65 L88 44 Z" fill="url(#rightLoop)" />
+</svg>
