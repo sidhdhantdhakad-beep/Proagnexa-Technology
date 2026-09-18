@@ -30,7 +30,7 @@ function App() {
       ? 'cloud-consulting'
       : path === '/services/devops-and-cloud-services' || path === '/devops'
       ? 'devops'
-      : path === '/services/mobile-application-development' || path === '/mobile'
+      : path === '/services/mobile-application-development' || path === '/mobile-application-development' || path === '/mobile'
       ? 'mobile'
       : path === '/services' || path.startsWith('/services/')
       ? 'services'
