@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import MobileApplicationDevelopment from './components/MobileApplicationDevelopment';
 import DevOpsAndCloudServices from './components/DevOpsAndCloudServices';
 import CloudConsultingAndManagedServices from './components/CloudConsultingAndManagedServices';
+import WebApplicationDevelopment from './components/WebApplicationDevelopment';
 import VideoModal from './components/VideoModal';
 import SearchModal from './components/SearchModal';
 import Footer from './components/Footer';
@@ -23,6 +24,8 @@ function App() {
   const currentPage =
     path === '/about'
       ? 'about'
+      : path === '/services/web-application-development' || path === '/web-application-development' || path === '/web-development'
+      ? 'webapp'
       : path === '/services/cloud-consulting-and-managed-services' || path === '/cloud-consulting'
       ? 'cloud-consulting'
       : path === '/services/devops-and-cloud-services' || path === '/devops'
@@ -47,6 +50,7 @@ function App() {
   const navigateToServices = () => goTo('/services');
   const navigateToCareer = () => goTo('/career');
   const navigateToContact = () => goTo('/contact');
+  const navigateToWebApp = () => goTo('/services/web-application-development');
   const navigateToMobile = () => goTo('/services/mobile-application-development');
   const navigateToDevOps = () => goTo('/services/devops-and-cloud-services');
   const navigateToCloudConsulting = () => goTo('/services/cloud-consulting-and-managed-services');
@@ -60,6 +64,7 @@ function App() {
         onNavigateServices={navigateToServices}
         onNavigateCareer={navigateToCareer}
         onNavigateContact={navigateToContact}
+        onNavigateWebApp={navigateToWebApp}
         onNavigateMobile={navigateToMobile}
         onNavigateDevOps={navigateToDevOps}
         onNavigateCloudConsulting={navigateToCloudConsulting}
@@ -71,6 +76,7 @@ function App() {
       {currentPage === 'about' && <AboutUs onNavigateHome={navigateToHome} onNavigateServices={navigateToServices} onOpenVideo={() => setVideoModalOpen(true)} onOpenSearch={() => setSearchModalOpen(true)} />}
       {currentPage === 'career' && <Careers />}
       {currentPage === 'contact' && <Contact />}
+      {currentPage === 'webapp' && <WebApplicationDevelopment />}
       {currentPage === 'mobile' && <MobileApplicationDevelopment />}
       {currentPage === 'devops' && <DevOpsAndCloudServices />}
       {currentPage === 'cloud-consulting' && <CloudConsultingAndManagedServices />}

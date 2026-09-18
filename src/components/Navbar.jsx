@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Logo from './Logo';
 
-export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, onNavigateServices, onNavigateCareer, onNavigateContact, onNavigateMobile, onNavigateDevOps, onNavigateCloudConsulting, currentPage = 'home' }) {
+export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, onNavigateServices, onNavigateCareer, onNavigateContact, onNavigateMobile, onNavigateDevOps, onNavigateCloudConsulting, onNavigateWebApp, currentPage = 'home' }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
@@ -20,6 +20,13 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
     setMobileMenuOpen(false);
     onNavigateServices && onNavigateServices();
     window.location.hash = targetHash;
+  };
+
+  const handleWebAppNavigation = (event) => {
+    event?.preventDefault();
+    setServicesDropdownOpen(false);
+    setMobileMenuOpen(false);
+    onNavigateWebApp && onNavigateWebApp();
   };
 
   const handleMobileNavigation = (event) => {
@@ -63,7 +70,7 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
               {currentPage === 'about' && <span className="active-indicator"></span>}
             </li>
             <li
-              className={`nav-item has-dropdown ${currentPage === 'services' || currentPage === 'mobile' || currentPage === 'devops' || currentPage === 'cloud-consulting' ? 'active' : ''}`}
+              className={`nav-item has-dropdown ${currentPage === 'services' || currentPage === 'mobile' || currentPage === 'devops' || currentPage === 'cloud-consulting' || currentPage === 'webapp' ? 'active' : ''}`}
               onMouseEnter={() => setServicesDropdownOpen(true)}
               onMouseLeave={() => setServicesDropdownOpen(false)}
             >
@@ -78,10 +85,17 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
               </button>
-              {(currentPage === 'services' || currentPage === 'mobile' || currentPage === 'devops' || currentPage === 'cloud-consulting') && <span className="active-indicator"></span>}
+              {(currentPage === 'services' || currentPage === 'mobile' || currentPage === 'devops' || currentPage === 'cloud-consulting' || currentPage === 'webapp') && <span className="active-indicator"></span>}
 
               {servicesDropdownOpen && (
                 <div className="dropdown-menu">
+                  <a href="#web-app" onClick={handleWebAppNavigation} className="dropdown-item">
+                    <span className="drop-icon blue">💻</span>
+                    <div>
+                      <strong>Web Application Development</strong>
+                      <p>Custom full-stack, ERP, CRM &amp; SaaS</p>
+                    </div>
+                  </a>
                   <a href="#devops" onClick={handleDevOpsNavigation} className="dropdown-item">
                     <span className="drop-icon blue">☁️</span>
                     <div>
@@ -163,6 +177,7 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
             <li>
               <a href="#services" onClick={handleServicesNavigation} className={currentPage === 'services' ? 'mobile-active' : ''}>Services</a>
               <div className="mobile-service-links">
+                <a href="#web-app" onClick={handleWebAppNavigation}>Web Application Development</a>
                 <a href="#devops" onClick={handleDevOpsNavigation}>DevOps &amp; Cloud Services</a>
                 <a href="#cloud-consulting" onClick={handleCloudConsultingNavigation}>Cloud Consulting &amp; Managed Services</a>
                 <a href="#mobile" onClick={handleMobileNavigation}>Mobile Application Development</a>
