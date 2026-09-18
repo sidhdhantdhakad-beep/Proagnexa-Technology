@@ -27,10 +27,47 @@ const benefits = [
   },
 ];
 
-const openings = [
+const internships = [
+  {
+    icon: "⚛️",
+    title: "React JS Developer",
+    badge: "Intern",
+    location: "Indore, India / Hybrid",
+    type: "Internship",
+    experience: "Fresher / Motivated Learner",
+    description:
+      "We are looking for passionate and motivated React JS Developer Interns eager to learn, build, and innovate. Work on exciting live projects, gain hands-on experience with expert mentorship, and grow your career in a dynamic IT environment.",
+    subject: "Application for React JS Developer Intern",
+  },
+  {
+    icon: "🐘",
+    title: "PHP/Laravel Developer",
+    badge: "Intern",
+    location: "Indore, India / Hybrid",
+    type: "Internship",
+    experience: "Fresher / Motivated Learner",
+    description:
+      "We are seeking enthusiastic PHP & Laravel Developer Interns who are passionate about coding and problem-solving. Gain real-world experience, work on live projects with expert guidance, and accelerate your career in web development.",
+    subject: "Application for PHP/Laravel Developer Intern",
+  },
+  {
+    icon: "🎨",
+    title: "UI/UX Designer",
+    badge: "Intern",
+    location: "Indore, India / Hybrid",
+    type: "Internship",
+    experience: "Fresher / Creative Mind",
+    description:
+      "We are looking for enthusiastic UI/UX Designer Interns who love crafting intuitive and engaging digital experiences. Gain hands-on exposure to modern design tools, collaborate with developers, and design interfaces that users love.",
+    subject: "Application for UI/UX Designer Intern",
+  },
+];
+
+const fullTimeOpenings = [
   {
     icon: "💻",
     title: "Frontend Developer",
+    badge: "Full Time",
     location: "Indore, India",
     type: "Full Time",
     experience: "1–2 Years",
@@ -41,6 +78,7 @@ const openings = [
   {
     icon: "⚙️",
     title: "Backend Developer",
+    badge: "Full Time",
     location: "Indore, India",
     type: "Full Time",
     experience: "1–2 Years",
@@ -48,26 +86,13 @@ const openings = [
       "Develop scalable APIs, backend services and database-driven applications.",
     subject: "Application for Backend Developer",
   },
-  {
-    icon: "🎨",
-    title: "UI/UX Designer",
-    location: "Indore, India",
-    type: "Full Time",
-    experience: "0–2 Years",
-    description:
-      "Design intuitive digital experiences, interfaces and user journeys.",
-    subject: "Application for UI/UX Designer",
-  },
-  {
-    icon: "📈",
-    title: "Business Development Executive",
-    location: "Indore, India",
-    type: "Full Time",
-    experience: "1–3 Years",
-    description:
-      "Build client relationships, identify opportunities and help grow our business.",
-    subject: "Application for Business Development Executive",
-  },
+];
+
+const testimonials = [
+  ['Michael Lee', 'We chose Proagnexa Technology for their industry-specific automation expertise. The solutions were tailor-made for our retail operations and helped us scale faster while reducing operational costs.'],
+  ['Priya Mehta', 'What impressed us most is their dedicated support team and post-launch maintenance. They ensured smooth system performance and proactive updates, which made them a long-term technology partner for us.'],
+  ['Amit Jain', 'Proagnexa Technology helped us automate our logistics workflows end-to-end. Their expertise in RPA and process automation reduced our manual workload by 40%, improving efficiency and accuracy across departments.'],
+  ['Anuj Goyal', 'Their team delivered a secure and compliant solution for our financial platform. We were impressed with their commitment to data security and regulatory compliance, which gave us complete peace of mind.'],
 ];
 
 const Career = () => {
@@ -148,23 +173,27 @@ const Career = () => {
       {/* ================= STATS ================= */}
       <section className="career-stats">
         <div className="career-stat">
-          <strong>50+</strong>
-          <span>Happy Clients</span>
+          <small>Successfully work with</small>
+          <strong>40</strong>
+          <span>HAPPY CLIENTS</span>
         </div>
 
         <div className="career-stat">
-          <strong>100+</strong>
-          <span>Projects Delivered</span>
+          <small>Successfully completed</small>
+          <strong>102</strong>
+          <span>FINISHED PROJECTS</span>
         </div>
 
         <div className="career-stat">
-          <strong>20+</strong>
-          <span>Team Members</span>
+          <small>Recruit more than</small>
+          <strong>20</strong>
+          <span>SKILLED EXPERTS</span>
         </div>
 
         <div className="career-stat">
-          <strong>5+</strong>
-          <span>Years Experience</span>
+          <small>Industries we have served</small>
+          <strong>15</strong>
+          <span>INDUSTRIES</span>
         </div>
       </section>
 
@@ -211,33 +240,32 @@ const Career = () => {
         </div>
       </section>
 
-      {/* ================= OPEN POSITIONS ================= */}
+      {/* ================= OPEN POSITIONS / INTERNSHIPS ================= */}
       <section className="career-openings" id="openings">
         <div className="career-section-heading openings-heading">
-          <span>OPEN POSITIONS</span>
+          <span>EXCITING INTERNSHIP OPPORTUNITIES</span>
 
           <h2>
-            Find Your Next
+            Exciting Internship Opportunities to
             <br />
-            <strong>Opportunity.</strong>
+            <strong>Kickstart Your Career with Us!</strong>
           </h2>
 
           <p>
-            Explore our current openings and find a role where you can
-            contribute, learn and make an impact.
+            Gain real-world experience, work on live projects with expert guidance, and accelerate your career in a dynamic IT environment.
           </p>
         </div>
 
         <div className="jobs-grid">
-          {openings.map((job) => (
+          {[...internships, ...fullTimeOpenings].map((job) => (
             <article className="job-card" key={job.title}>
               <div className="job-card-header">
                 <div className="job-icon">
                   {job.icon}
                 </div>
 
-                <span className="job-type">
-                  {job.type}
+                <span className={`job-type ${job.badge === 'Intern' ? 'intern-badge' : ''}`}>
+                  {job.badge || job.type}
                 </span>
               </div>
 
@@ -259,6 +287,29 @@ const Career = () => {
                 Apply Now
                 <span>→</span>
               </button>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= TESTIMONIALS ================= */}
+      <section className="career-testimonials">
+        <div className="career-section-heading">
+          <span>WHAT OUR CLIENTS SAY</span>
+          <h2>
+            Why Businesses Trust
+            <br />
+            <strong>Proagnexa Technology.</strong>
+          </h2>
+        </div>
+
+        <div className="career-testimonials-grid">
+          {testimonials.map(([name, quote]) => (
+            <article className="career-testimonial-card" key={name}>
+              <div className="testimonial-stars" aria-label="5 stars">★★★★★</div>
+              <p>&ldquo;{quote}&rdquo;</p>
+              <strong>{name}</strong>
+              <span>Verified Client Review</span>
             </article>
           ))}
         </div>
