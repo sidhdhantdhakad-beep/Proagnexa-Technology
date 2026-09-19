@@ -364,9 +364,9 @@
 
 .navbar-container {
   width: 100%;
-  max-width: none;
-  margin: 0;
-  padding: 16px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 9px 7%;
   display: flex;
   align-items: center;
   justify-content: space-between;
