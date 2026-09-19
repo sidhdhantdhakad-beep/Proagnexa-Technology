@@ -1,8 +1,12 @@
 :root {
-  --primary-blue: #1d68f0;
-  --primary-purple: #7932e6;
-  --gradient-accent: linear-gradient(135deg, #1d68f0 0%, #7932e6 100%);
-  --gradient-hover: linear-gradient(135deg, #1557d1 0%, #6826cc 100%);
+  --brand-mint: #b6d4cc;
+  --brand-mint-light: #eef7f4;
+  --brand-mint-deep: #164e43;
+  --primary-blue: #1b5e50;
+  --primary-purple: #2f7a69;
+  --gradient-accent: linear-gradient(135deg, #1b5e50 0%, #2f7a69 45%, #b6d4cc 100%);
+  --gradient-hover: linear-gradient(135deg, #13463b 0%, #225c4f 100%);
+  --gradient-mint: linear-gradient(135deg, #b6d4cc 0%, #8bc3b3 100%);
   
   --navy-900: #0b132a;
   --navy-800: #101c3d;

@@ -39,7 +39,7 @@ export default function Home({ onOpenVideo }) {
             />
             <defs>
               <linearGradient id="waveGradLeft" x1="-20" y1="280" x2="240" y2="0" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.4" />
+                <stop offset="0%" stopColor="#b6d4cc" stopOpacity="0.55" />
                 <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
               </linearGradient>
             </defs>
@@ -47,7 +47,7 @@ export default function Home({ onOpenVideo }) {
           <div className="dot-grid"></div>
         </div>
 
-        {/* Bottom Right Lilac Wave */}
+        {/* Bottom Right Wave */}
         <div className="curved-wave-right">
           <svg width="360" height="320" viewBox="0 0 360 320" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -57,7 +57,7 @@ export default function Home({ onOpenVideo }) {
             />
             <defs>
               <linearGradient id="waveGradRight" x1="380" y1="320" x2="100" y2="0" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#a855f7" stopOpacity="0.4" />
+                <stop offset="0%" stopColor="#8bc3b3" stopOpacity="0.5" />
                 <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
               </linearGradient>
             </defs>
