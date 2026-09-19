@@ -116,55 +116,80 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
               {(currentPage === 'services' || currentPage === 'mobile' || currentPage === 'devops' || currentPage === 'cloud-consulting' || currentPage === 'webapp' || currentPage === 'whitelabel' || currentPage === 'devops-partnership' || currentPage === 'maintenance' || currentPage === 'custom-saas') && <span className="active-indicator"></span>}
 
               {servicesDropdownOpen && (
-                <div className="dropdown-menu">
-                  <a href="#web-app" onClick={handleWebAppNavigation} className="dropdown-item">
-                    <span className="drop-icon blue">💻</span>
-                    <div>
-                      <strong>Web Application Development</strong>
-                      <p>Custom full-stack, ERP, CRM &amp; SaaS</p>
+                <div className="dropdown-menu mega-dropdown">
+                  <div className="dropdown-main-column">
+                    <span className="dropdown-column-title">CORE SERVICES &amp; ENGINEERING</span>
+                    <a href="#web-app" onClick={handleWebAppNavigation} className="dropdown-item">
+                      <span className="drop-icon blue">💻</span>
+                      <div>
+                        <strong>Web Application Development</strong>
+                        <p>Custom full-stack, ERP, CRM &amp; scalable SaaS</p>
+                      </div>
+                    </a>
+                    <a href="#devops" onClick={handleDevOpsNavigation} className="dropdown-item">
+                      <span className="drop-icon blue">☁️</span>
+                      <div>
+                        <strong>DevOps &amp; Cloud Services</strong>
+                        <p>CI/CD pipelines, Kubernetes &amp; cloud infrastructure</p>
+                      </div>
+                    </a>
+                    <a href="#cloud-consulting" onClick={handleCloudConsultingNavigation} className="dropdown-item">
+                      <span className="drop-icon purple">⚙️</span>
+                      <div>
+                        <strong>Cloud Consulting &amp; Managed Services</strong>
+                        <p>Architecture design, FinOps &amp; 24/7 cloud management</p>
+                      </div>
+                    </a>
+                    <a href="#mobile" onClick={handleMobileNavigation} className="dropdown-item">
+                      <span className="drop-icon green">📱</span>
+                      <div>
+                        <strong>Mobile Application Development</strong>
+                        <p>High-performance iOS, Android &amp; cross-platform apps</p>
+                      </div>
+                    </a>
+                    <a href="#maintenance" onClick={handleMaintenanceNavigation} className="dropdown-item">
+                      <span className="drop-icon yellow">🛠️</span>
+                      <div>
+                        <strong>Maintenance &amp; Support Services</strong>
+                        <p>24/7 SLA monitoring, bug fixes &amp; security updates</p>
+                      </div>
+                    </a>
+                    <a href="#custom-saas" onClick={handleCustomSaaSNavigation} className="dropdown-item">
+                      <span className="drop-icon violet">🚀</span>
+                      <div>
+                        <strong>Custom Solutions &amp; White-Label SaaS</strong>
+                        <p>Ready-to-use Mini-ERP, CRM, eCommerce &amp; vertical SaaS</p>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div className="dropdown-side-column">
+                    <span className="dropdown-column-title">AGENCY PARTNERSHIP</span>
+                    <div className="agency-partner-box">
+                      <div className="partner-box-header">
+                        <span className="partner-badge">SILENT TECH PARTNER</span>
+                        <h5>Scale Your Agency Delivery</h5>
+                        <p>Deliver enterprise-grade technology projects under your own brand with full confidentiality.</p>
+                      </div>
+                      <div className="partner-links-list">
+                        <a href="#white-label" onClick={handleWhiteLabelNavigation} className="partner-sub-link">
+                          <span>White-Label Development</span>
+                          <span className="link-arrow">→</span>
+                        </a>
+                        <a href="#service-06" onClick={(event) => handleServicesNavigation(event, '#service-06')} className="partner-sub-link">
+                          <span>Dedicated Developers</span>
+                          <span className="link-arrow">→</span>
+                        </a>
+                        <a href="#devops-partnership" onClick={handleDevOpsPartnershipNavigation} className="partner-sub-link">
+                          <span>DevOps &amp; Cloud Partnership</span>
+                          <span className="link-arrow">→</span>
+                        </a>
+                        <a href="#custom-saas" onClick={handleCustomSaaSNavigation} className="partner-sub-link">
+                          <span>White-Label SaaS Reselling</span>
+                          <span className="link-arrow">→</span>
+                        </a>
+                      </div>
                     </div>
-                  </a>
-                  <a href="#devops" onClick={handleDevOpsNavigation} className="dropdown-item">
-                    <span className="drop-icon blue">☁️</span>
-                    <div>
-                      <strong>DevOps &amp; Cloud Services</strong>
-                      <p>Reliable infrastructure and delivery</p>
-                    </div>
-                  </a>
-                  <a href="#cloud-consulting" onClick={handleCloudConsultingNavigation} className="dropdown-item">
-                    <span className="drop-icon purple">⚙️</span>
-                    <div>
-                      <strong>Cloud Consulting &amp; Managed Services</strong>
-                      <p>Strategic guidance and 24/7 support</p>
-                    </div>
-                  </a>
-                  <a href="#mobile" onClick={handleMobileNavigation} className="dropdown-item">
-                    <span className="drop-icon green">📱</span>
-                    <div>
-                      <strong>Mobile Application Development</strong>
-                      <p>High-performance apps for every platform</p>
-                    </div>
-                  </a>
-                  <a href="#maintenance" onClick={handleMaintenanceNavigation} className="dropdown-item">
-                    <span className="drop-icon yellow">🛠️</span>
-                    <div>
-                      <strong>Maintenance &amp; Support Services</strong>
-                      <p>24/7 SLA monitoring, bug fixes &amp; FinOps</p>
-                    </div>
-                  </a>
-                  <a href="#custom-saas" onClick={handleCustomSaaSNavigation} className="dropdown-item">
-                    <span className="drop-icon violet">🚀</span>
-                    <div>
-                      <strong>Custom Solutions &amp; White-Label SaaS</strong>
-                      <p>Ready-to-use Mini-ERP, CRM &amp; vertical SaaS</p>
-                    </div>
-                  </a>
-                  <div className="dropdown-group">
-                    <div className="dropdown-group-title"><span className="drop-icon violet">🤝</span><strong>Agency Partnership</strong></div>
-                    <a href="#white-label" onClick={handleWhiteLabelNavigation} className="dropdown-subitem">White-Label Development</a>
-                    <a href="#service-06" onClick={(event) => handleServicesNavigation(event, '#service-06')} className="dropdown-subitem">Dedicated Developers</a>
-                    <a href="#devops-partnership" onClick={handleDevOpsPartnershipNavigation} className="dropdown-subitem">DevOps &amp; Cloud Partnership</a>
-                    <a href="#custom-saas" onClick={handleCustomSaaSNavigation} className="dropdown-subitem">White-Label SaaS Solutions</a>
                   </div>
                 </div>
               )}
@@ -193,6 +218,18 @@ export default function Navbar({ onOpenSearch, onNavigateAbout, onNavigateHome, 
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
           </button>
+
+          <a
+            href="#contact"
+            onClick={(e) => { e.preventDefault(); onNavigateContact && onNavigateContact(); }}
+            className="btn-get-started desktop-cta"
+          >
+            <span>Get in Touch</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
 
           {/* Hamburger toggle */}
           <button
